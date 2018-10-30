@@ -969,6 +969,29 @@ gamepad.ondigital = function(button, value) {
       cam_zoom(1, "zoomstop");
     }
   }
+
+  //FOCUS-IN
+  if (button == "b") {
+    if (value) {
+      stop_autopan();
+      cam_focus(1, "focusin");
+      clear_active_preset();
+    } else {
+      cam_focus(1, "focusstop");
+    }
+  }
+
+  //FOCUS OUT
+  if (button == "x") {
+    if (value) {
+      stop_autopan();
+      cam_focus(1, "focusout");
+      clear_active_preset();
+    } else {
+      cam_focus(1, "focusstop");
+    }
+  }
+
   //SWITCH CAMERA
   if (button == "r1") {
     change_ip(1);
