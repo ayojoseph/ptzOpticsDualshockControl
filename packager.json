@@ -1,0 +1,14 @@
+{
+	"osx" : {
+		"title": "Camera Control",
+		"icon": "assets/osx/icon.icns"
+	},
+	"win32" : {
+		"title" : "Camera Control",
+		"icon" : "assets/win/icon.ico"
+	},
+	"win64" : {
+		"title" : "Camera Control",
+		"icon" : "assets/win/icon.ico"
+	}
+}
