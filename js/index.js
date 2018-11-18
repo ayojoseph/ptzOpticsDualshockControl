@@ -1,6 +1,22 @@
 var camera_ip = "192.168.2.246";
 var base_url = "http://" + camera_ip + "/cgi-bin";
 
+//ATEM Work
+var ATEM = require("applest-atem");
+var atem = new ATEM({
+  forceOldStyle: true
+});
+
+atem.connect("192.168.2.215");
+
+//atem functions
+atem.on("connect", function() {
+  atem.changeProgramInput(5); // ME1(0)
+  atem.changePreviewInput(6); // ME1(0)
+  atem.autoTransition(); // ME1(0)
+  atem.changeProgramInput(3, 1); // ME2(1)
+});
+
 //Controller Work
 
 ds = require("dualshock");
@@ -1014,6 +1030,14 @@ gamepad.ondigital = function(button, value) {
     cam_preset(1, 2, "poscall");
     clear_active_preset();
     $(".preset").addClass("active");
+  }
+
+  if (button == "l3" && value) {
+    // stop_autopan();
+    // cam_preset(1, 2, "poscall");
+    // clear_active_preset();
+    // $(".preset").addClass("active");
+    atem.cutTransition();
   }
 };
 

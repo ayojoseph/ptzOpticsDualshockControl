@@ -1,4 +1,4 @@
-# Camera Control W/ ps4 control enabled
+# Camera Control
 PTZOptics Camera Control Software (Electron App)
 
 This project is made for the PTZOptics line of IP Cameras.
